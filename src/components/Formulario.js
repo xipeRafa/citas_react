@@ -32,10 +32,13 @@ const Formulario = ({crearCita}) => {
         // Validar
         if(mascota.trim() === '' || propietario.trim() === ''  || fecha.trim() === ''  || hora.trim() === ''  || sintomas.trim() === '' ){
             actualizarError(true);
-            return;
-        }
         // Eliminar el mensaje previo 
-        actualizarError(false);
+        setTimeout( () => {
+            actualizarError(false);
+        }, 5000 ) 
+           return;
+        }
+         
 
         // Asignar un ID
         cita.id = uuid();
